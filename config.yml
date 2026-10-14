@@ -1,0 +1,39 @@
+economy:
+  currency-symbol: "$"
+  base-sell-factor: 0.75
+  allow-standalone-fallback: true
+  fallback-starting-balance: 10000.00
+
+market:
+  buy-sensitivity-per-unit: 0.0025
+  sell-sensitivity-per-unit: 0.0025
+  min-price-multiplier: 0.25
+  max-price-multiplier: 4.50
+  recovery-rate-per-cycle: 0.04
+  recovery-interval-seconds: 300
+  autosave-interval-seconds: 120
+  debug-logging: false
+
+shrinkflation:
+  enabled: false
+  activation-multiplier-threshold: 1.35
+  max-quantity-reduction-ratio: 0.125
+  minimum-bundle-size: 8
+
+items:
+  blacklist:
+    - BEDROCK
+    - BARRIER
+    - COMMAND_BLOCK
+  custom-base-prices:
+    DIAMOND: 100.00
+    NETHERITE_INGOT: 1050.00
+    GOLDEN_DANDELION: 45.00
+    IRON_INGOT: 15.00
+    GOLD_INGOT: 25.00
+    EMERALD: 60.00
+    COBBLESTONE: 1.50
+    OAK_LOG: 8.00
+    COOKED_BEEF: 10.00
+  category-overrides:
+    GOLDEN_DANDELION: NATURAL_AND_FARMING

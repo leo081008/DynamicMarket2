@@ -1,0 +1,34 @@
+name: DynamicMarket
+version: '26.3.0'
+main: de.dynamicmarket.DynamicMarket
+api-version: '26.1'
+authors: [DynamicMarketTeam]
+description: Complete Dynamic Economy & Shop GUI Plugin for PaperMC 26.x
+softdepend: [Vault, Essentials]
+libraries:
+  - org.xerial:sqlite-jdbc:3.46.1.3
+
+commands:
+  shop:
+    description: Opens the DynamicMarket GUI or runs market management subcommands.
+    usage: /shop [reload | info [item] | prices [surging|discounted]]
+    aliases: [market, dshop]
+    permission: dynamicmarket.use
+
+permissions:
+  dynamicmarket.use:
+    description: Allows opening the /shop GUI and buying/selling items.
+    default: true
+  dynamicmarket.info:
+    description: Allows viewing market statistics with /shop info.
+    default: true
+  dynamicmarket.prices:
+    description: Allows viewing top surging/discounted items with /shop prices.
+    default: true
+  dynamicmarket.admin:
+    description: Allows administrative commands such as /shop reload.
+    default: op
+    children:
+      dynamicmarket.use: true
+      dynamicmarket.info: true
+      dynamicmarket.prices: true
